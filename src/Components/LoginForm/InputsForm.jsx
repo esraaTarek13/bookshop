@@ -6,6 +6,8 @@ import axios from "axios";
 import * as yup from "yup";
 import { useState } from "react";
 import AuthButton from "../Ui/AuthButton";
+import Cookies from "js-cookie";
+
 
 // Login Form
 export default function InputsForm() {
@@ -16,6 +18,7 @@ export default function InputsForm() {
   const handleLogin = async (values) => {
     try {
       const res = await axios.post("https://bookstore.eraasoft.pro/api/login", values)
+      Cookies.set("token", res.data.data.token, { expires: 7 });
       navigate("/")
       console.log(res);
     } catch (error) {
@@ -57,7 +60,7 @@ export default function InputsForm() {
             <Link to="/forget-password" className="text-(--btn-color)">Forget password?</Link>
           </div>
 
-           {/* Login Button */}
+          {/* Login Button */}
           <AuthButton />
         </Form>
       </Formik>

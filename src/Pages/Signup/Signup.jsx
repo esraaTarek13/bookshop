@@ -1,10 +1,10 @@
-import HeroSection from "../../Components/HeroSection/HeroSection";
+import AuthHeroSection from "../../Components/HeroSection/AuthHeroSection";
 import SignupForm from "../../Components/SignupForm/SignupForm";
 
 export default function Signup() {
   return (
     <>
-      <HeroSection />
+      <AuthHeroSection />
       <SignupForm />
     </>
   )

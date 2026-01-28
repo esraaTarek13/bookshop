@@ -19,7 +19,6 @@ export default function InputsForm() {
             const res = axios.post("https://bookstore.eraasoft.pro/api/register", values)
             navigate("/login")
             console.log(res);
-
         } catch (error) {
             console.log(error);
         }

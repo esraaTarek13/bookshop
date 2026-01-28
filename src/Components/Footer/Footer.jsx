@@ -5,17 +5,17 @@ import FooterLinks from "./FooterLinks";
 
 export default function Footer() {
   return (
-    <div className="h-[40vh] bg-(--secondary-color) text-(--secondary-text-color)">
+    <div className="py-10 md-py-0 md:h-[40vh] bg-(--secondary-color) text-(--secondary-text-color)">
       <div className="container h-full flex flex-col justify-center">
         <FooterLinks />
 
-        <div className="flex justify-between items-center border-t border-[#FFFFFF80] pt-4">
-          <p>&lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024</p>
+        <div className="flex flex-col-reverse md:flex-row justify-between md:items-center border-t border-[#FFFFFF80] pt-4">
+          <p className="pt-6 md:pt-0">&lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024</p>
 
           <div className="flex gap-4 items-center">
             <TiWorld className="text-4xl"/>
-            <div className="flex justify-between items-center border border-[#FFFFFF80] rounded-(--btn-radius) p-4 text-[#FFFFFF80]">
-              <input type="text" placeholder="English" className="outline-0"/>
+            <div className="w-full md:-w-fit flex justify-between items-center border border-[#FFFFFF80] rounded-(--btn-radius) p-4 text-[#FFFFFF80]">
+              <input type="text" placeholder="English" className="outline-0 "/>
               <FaAngleRight className="text-2xl"/>
             </div>
           </div>

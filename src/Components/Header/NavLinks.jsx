@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export default function NavLinks() {
   const [links, setLinks] = useState([
     {
-      path: "/",
+      path: "",
       name: "Home",
     },
     {

@@ -9,7 +9,7 @@ export default function FooterIcons() {
     const [icons, setIcons] = useState([<FaFacebook />, <FaInstagram />, <FaYoutube />, <FaXTwitter />])
 
     return (
-        <ul className="flex gap-6 text-3xl">
+        <ul className="flex gap-6 text-3xl pt-6 md:pt-0">
             {icons.map((icon, index) => (
                 <li key={index} className="cursor-pointer hover:text-(--first-text-yellow-color) transition-colors duration-300">{icon}</li>
             ))}
