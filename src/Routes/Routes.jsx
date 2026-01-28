@@ -15,49 +15,61 @@ import AddCode from "../Pages/AddCode/AddCode";
 
 
 const router = createBrowserRouter([
-    {
-        path: "/",
-        element: <MainLayout />,
-        errorElement: <Error />,
-        children: [
-            { index:
-                 true,
-                  element: <Home /> },
-            { path:
-                 "about",
-                  element: <About /> },
-            { path:
-                 "books",
-                  element: <Books /> },
-            { path:
-                 "cart",
-                  element: <Cart /> },
-            { path:
-                 "checkout",
-                  element: <CheckOut /> },
-            { path:
-                 "login",
-                  element: <Login /> },
-            { path:
-                 "signup",
-                  element: <Signup /> },
-            { path:
-                 "profile",
-                  element: <Profile /> },
-            { path:
-                 "wishlist",
-                  element: <WishList /> },
-            { path:
-                 "forget-password",
-                  element: <ForgetPassword /> },
-            { path:
-                 "reset-password",
-                  element: <ResetPassword /> },
-            { path:
-                 "add-code",
-                  element: <AddCode /> },
-        ],
-    },
+     {
+          path: "/",
+          element: <MainLayout />,
+          errorElement: <Error />,
+          children: [
+               {
+                    path: "/",
+                    element: <Home />
+               },
+               {
+                    path: "about",
+                    element: <About />
+               },
+               {
+                    path: "books",
+                    element: <Books />
+               },
+               {
+                    path: "cart",
+                    element: <Cart />
+               },
+               {
+                    path: "checkout",
+                    element: <CheckOut />
+               },
+               {
+                    path: "login",
+                    element: <Login />
+               },
+               {
+                    path: "signup",
+                    element: <Signup />
+               },
+               {
+                    path: "profile",
+                    element: <Profile />
+               },
+               {
+                    path: "wishlist",
+                    element: <WishList />
+               },
+               {
+                    path: "forget-password",
+                    element: <ForgetPassword />
+               },
+               {
+                    path: "reset-password",
+                    element: <ResetPassword />
+               },
+               {
+                    path: "add-code",
+                    element: <AddCode />
+               },
+          ],
+     },
 ]);
 
 export default router;

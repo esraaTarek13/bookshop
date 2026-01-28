@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from "formik";
+import { Field, Form, Formik, ErrorMessage } from "formik";
 import AuthButton from "../Ui/AuthButton";
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
@@ -26,12 +26,26 @@ export default function InputsForm() {
 
     // Form Validation
     const registerSchema = yup.object({
-        first_name: yup.string().required(),
-        last_name: yup.string().required(),
-        email: yup.string().required().email(),
-        password: yup.string().required(),
-        password_confirmation: yup.string().required().oneOf([yup.ref('password'), null]),
-        agree: yup.boolean().oneOf([true])
+        first_name: yup
+            .string()
+            .required("*First name is required"),
+        last_name: yup
+            .string()
+            .required("*Last name is required"),
+        email: yup
+            .string()
+            .required("*Email is required")
+            .email("*Please enter a valid email"),
+        password: yup
+            .string()
+            .required("*Password is required"),
+        password_confirmation: yup
+            .string()
+            .required("*Password confirmation is required")
+            .oneOf([yup.ref('password'), null], "*Passwords do not match"),
+        agree: yup
+            .boolean()
+            .oneOf([true], "*Please accept the terms to continue")
     })
 
 
@@ -44,10 +58,12 @@ export default function InputsForm() {
                         <div className="flex flex-col gap-2 md:w-[50%]">
                             <label htmlFor="fristName" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">First Name</label>
                             <Field name="first_name" type="text" id="fristName" placeholder="John" className="bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 outline-0" />
+                            <ErrorMessage name="first_name" component="p" className="text-(--btn-color) text-sm mt-1" />
                         </div>
                         <div className="flex flex-col gap-2 md:w-[50%] mt-6 md:mt-0">
                             <label htmlFor="lastName" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">Last Name</label>
                             <Field name="last_name" type="text" id="lastName" placeholder="Smith" className="bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 outline-0" />
+                            <ErrorMessage name="last_name" component="p" className="text-(--btn-color) text-sm mt-1" />
                         </div>
                     </div>
 
@@ -55,6 +71,7 @@ export default function InputsForm() {
                         <label htmlFor="email" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">Email</label>
                         <Field name="email" type="email" id="email" placeholder="example@gmail.com"
                             className="bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 outline-0" />
+                        <ErrorMessage name="email" component="p" className="text-(--btn-color) text-sm mt-1" />
                     </div>
 
                     <div className="flex flex-col gap-2 mt-6">
@@ -63,6 +80,7 @@ export default function InputsForm() {
                             <Field name="password" type={showPassword ? "text" : "password"} id="password" placeholder="Enter password" className="w-full border-0 outline-0" />
                             {showPassword ? <FaEyeSlash onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" /> : <FaEye onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" />}
                         </div>
+                        <ErrorMessage name="password" component="p" className="text-(--btn-color) text-sm mt-1" />
                     </div>
 
                     <div className="flex flex-col gap-2 mt-6">
@@ -71,14 +89,16 @@ export default function InputsForm() {
                             <Field name="password_confirmation" type={showConfirmPassword ? "text" : "password"} id="confirmationPassword" placeholder="Enter password" className="w-full border-0 outline-0" />
                             {showConfirmPassword ? <FaEyeSlash onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="text-[#878A99] cursor-pointer" /> : <FaEye onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="text-[#878A99] cursor-pointer" />}
                         </div>
+                        <ErrorMessage name="password_confirmation" component="p" className="text-(--btn-color) text-sm mt-1" />
                     </div>
 
                     <div className="flex gap-2 pt-4">
                         <Field name="agree" type="checkbox" id="agree" />
                         <label htmlFor="agree">Agree with<span className="text-(--btn-color)"> Terms & Conditions</span></label>
                     </div>
+                        <ErrorMessage name="agree" component="p" className="text-(--btn-color) text-sm mt-1" />
 
-                    {/* Login Button */}
+                    {/* Signup Button */}
                     <AuthButton />
                 </Form>
             </Formik>

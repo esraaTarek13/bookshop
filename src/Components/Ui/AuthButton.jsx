@@ -5,7 +5,7 @@ export default function AuthButton() {
     return (
         <>
             <button type="submit" className="w-full mt-10 cursor-pointer p-4 rounded-(--btn-radius) bg-(--btn-color) text-(--secondary-text-color) font-(--text-font-weight) text-[18px]">
-                {location.pathname === "/Sign Up" ? "Log in" : "Sign Up"} 
+                {location.pathname === "/login" ? "Log in" : "Sign Up"} 
             </button>
         </>
     )

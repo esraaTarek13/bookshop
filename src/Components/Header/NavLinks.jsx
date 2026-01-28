@@ -21,7 +21,7 @@ export default function NavLinks() {
   return (
     <>
       {links.map((link, index) => (
-        <li key={index} className="hover:text-(--first-text-yellow-color) transition-colors duration-300"><Link to={`/${link.path}`}>{link.name}</Link></li>
+        <li key={index} className="hover:text-(--first-text-yellow-color) transition-colors duration-300 text-[16px] lg:text-[18px]"><Link to={`/${link.path}`}>{link.name}</Link></li>
       ))}
     </>
   )
