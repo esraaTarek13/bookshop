@@ -1,49 +1,21 @@
 import { Field, Formik, Form, ErrorMessage } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import axios from "axios";
-import * as yup from "yup";
 import { useState } from "react";
 import AuthButton from "../Ui/AuthButton";
-import Cookies from "js-cookie";
+import { loginSchema } from "../../Validation/LoginSchema";
+import { UseLogin } from "../../Hooks/UseLogin";
 
 
 // Login Form
 export default function InputsForm() {
   const [showPassword, setShowPassword] = useState(false)
-  const navigate = useNavigate();
-
-  // Post Data
-  const handleLogin = async (values) => {
-    try {
-      const res = await axios.post("https://bookstore.eraasoft.pro/api/login", values)
-      Cookies.set("token", res.data.data.token, { expires: 7 });
-      navigate("/")
-      console.log(res);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  // Form Validation
-  const loginSchema = yup.object({
-    email: yup
-      .string()
-      .required("*Email is required")
-      .email("*Please enter a valid email"),
-    password: yup
-      .string()
-      .required("*Password is required"),
-    checked: yup
-      .boolean()
-      .oneOf([true])
-  })
-
+  const {mutate} = UseLogin();
 
   return (
     <div className="w-full">
-      <Formik initialValues={{ email: "", password: "", checked: false }} validationSchema={loginSchema} onSubmit={(values) => { handleLogin(values) }}>
+      <Formik initialValues={{ email: "", password: "", checked: false }} validationSchema={loginSchema} onSubmit={(values) => { mutate(values) }}>
         <Form>
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">Email</label>

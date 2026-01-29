@@ -3,56 +3,19 @@ import AuthButton from "../Ui/AuthButton";
 import { useState } from "react";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-import axios from "axios";
-import * as yup from "yup";
-import { useNavigate } from "react-router-dom";
+import { registerSchema } from "../../Validation/RegisterSchema";
+import { UseRegister } from "../../Hooks/UseRegister";
 
 // Register Form
 export default function InputsForm() {
     const [showPassword, setShowPassword] = useState(false)
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-    const navigate = useNavigate();
-
-    // Post Data
-    const handleregister = (values) => {
-        try {
-            const res = axios.post("https://bookstore.eraasoft.pro/api/register", values)
-            navigate("/login")
-            console.log(res);
-        } catch (error) {
-            console.log(error);
-        }
-    }
-
-    // Form Validation
-    const registerSchema = yup.object({
-        first_name: yup
-            .string()
-            .required("*First name is required"),
-        last_name: yup
-            .string()
-            .required("*Last name is required"),
-        email: yup
-            .string()
-            .required("*Email is required")
-            .email("*Please enter a valid email"),
-        password: yup
-            .string()
-            .required("*Password is required"),
-        password_confirmation: yup
-            .string()
-            .required("*Password confirmation is required")
-            .oneOf([yup.ref('password'), null], "*Passwords do not match"),
-        agree: yup
-            .boolean()
-            .oneOf([true], "*Please accept the terms to continue")
-    })
-
+    const {mutate} = UseRegister();
 
     return (
         <div className="w-full">
             <Formik initialValues={{ first_name: "", last_name: "", email: "", password: "", password_confirmation: "", agree: false }}
-                validationSchema={registerSchema} onSubmit={(values) => { handleregister(values) }}>
+                validationSchema={registerSchema} onSubmit={(values) => { mutate(values) }}>
                 <Form>
                     <div className="w-full md:flex gap-4">
                         <div className="flex flex-col gap-2 md:w-[50%]">
