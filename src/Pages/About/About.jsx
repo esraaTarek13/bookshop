@@ -1,8 +1,9 @@
+import HeroSection from "../../Components/HeroSection/HeroSection";
 
 export default function About() {
   return (
-    <div>
-      About
-    </div>
+    <>
+      <HeroSection />
+    </>
   )
 }

@@ -5,12 +5,12 @@ import FooterLinks from "./FooterLinks";
 
 export default function Footer() {
   return (
-    <div className="py-10 md-py-0 md:h-[40vh] bg-(--secondary-color) text-(--secondary-text-color)">
-      <div className="container h-full flex flex-col justify-center">
+    <footer className="py-10 md-py-0 md:h-[40vh] bg-(--secondary-color) text-(--secondary-text-color)">
+      <div className="Custom-container h-full flex flex-col justify-center">
         <FooterLinks />
 
         <div className="flex flex-col-reverse md:flex-row justify-between md:items-center border-t border-[#FFFFFF80] pt-4">
-          <p className="pt-6 md:pt-0">&lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024</p>
+          <p className="pt-6 md:pt-0 text-[12px] md:text-[16px] text-center md:text-start">&lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024</p>
 
           <div className="flex gap-4 items-center">
             <TiWorld className="text-4xl"/>
@@ -21,6 +21,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   )
 }

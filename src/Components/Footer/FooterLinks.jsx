@@ -1,24 +1,9 @@
 import { Link } from "react-router-dom";
 import FooterIcons from "./FooterIcons";
-import { useState } from "react";
+import { navLinks } from "../../constants/NavLinks";
 
 
 export default function FooterLinks() {
-    const [links, setLinks] = useState([
-        {
-            path: "",
-            name: "Home",
-        },
-        {
-            path: "books",
-            name: "Books",
-        },
-        {
-            path: "about",
-            name: "About Us",
-        }
-    ])
-
     return (
         <>
             <div className="flex flex-col md:flex-row justify-between md:items-center pb-4">
@@ -26,8 +11,8 @@ export default function FooterLinks() {
                     <Link to="/"><img src="/images/logo.png" alt="Logo" /></Link>
 
                     <ul className="flex flex-col md:flex-row gap-6 md:items-center">
-                        {links.map((link , index) => (
-                            <li key={index} className="hover:text-(--first-text-yellow-color) transition-colors duration-300"><Link to={`/${link.path}`}>{link.name}</Link></li>
+                        {navLinks.map((link , index) => (
+                            <li key={index} className="hover:text-(--first-text-yellow-color) transition-colors duration-300 text-[14px] md:text-[16px]"><Link to={`/${link.path}`}>{link.name}</Link></li>
                         ))}
                     </ul>
                 </div>

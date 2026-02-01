@@ -4,7 +4,7 @@
 :root {
     /* Background Color */
     --main-color: #F5F5F5;
-    --secondary-color: #3B2F4A;
+    --secondary-color: #3B2F4A;  
     --nav-bg: #FFFFFF33;      
     --btn-color: #D9176C;
     --btn-color-light: #D9176C1A; 
@@ -12,7 +12,7 @@
 
     /* Text Color */
     --main-text-color: #222222;
-    --main-text-color-light: #22222280;  
+    --main-text-color-light: #22222280;   
     --secondary-text-color: #FFFFFF;  
     --first-text-yellow-color: #EAA451; 
     --second-text-yellow-color: #EBC305;
@@ -24,14 +24,14 @@
 
     /* Radius */
     --btn-radius: 8px;
-    --section-radius: 8px;
+    --section-radius: 20px;
 }
 
 body {
     font-family: "Open Sans", "Inter";
 }
 
-.container {
+.Custom-container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -41,35 +41,35 @@ body {
 
 /* sm */
 @media (min-width: 576px) {
-  .container {
+  .Custom-container {
     max-width: 540px;
   }
 }
 
 /* md */
 @media (min-width: 768px) {
-  .container {
+  .Custom-container {
     max-width: 720px;
   }
 }
 
 /* lg */
 @media (min-width: 992px) {
-  .container {
+  .Custom-container {
     max-width: 960px;
   }
 }
 
 /* xl */
 @media (min-width: 1200px) {
-  .container {
+  .Custom-container {
     max-width: 1140px;
   }
 }
 
 /* xxl */
 @media (min-width: 1400px) {
-  .container {
+  .Custom-container {
     max-width: 1320px;
   }
 }
