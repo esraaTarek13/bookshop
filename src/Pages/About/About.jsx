@@ -1,9 +1,13 @@
+import MissionsSection from "../../Components/About/MissionsSection/MissionsSection";
 import HeroSection from "../../Components/HeroSection/HeroSection";
+import FeaturesSection from "../../Components/Home/FeaturesSection/FeaturesSection";
 
 export default function About() {
   return (
     <>
-      <HeroSection />
+      <HeroSection height="h-[90vh]" />
+      <MissionsSection />
+      <FeaturesSection />
     </>
   )
 }

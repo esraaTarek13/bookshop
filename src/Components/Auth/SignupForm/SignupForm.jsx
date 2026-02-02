@@ -11,9 +11,9 @@ export default function SignupForm() {
                 {/* Form */}
                 <InputsForm />
 
-                <div className="flex">
+                <div className="flex gap-0.5">
                     <p>Already have an account?</p>
-                    <Link to="/login" className="text-(--btn-color)">Login</Link>
+                    <Link to="/login" className="text-(--btn-color) font-(--text-font-weight)">Login</Link>
                 </div>
 
                 <p className="text-(--main-text-color-light)">or</p>

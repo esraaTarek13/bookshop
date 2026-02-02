@@ -4,13 +4,14 @@ import { FaListUl } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
 import { useState } from "react";
 import NavButton from './NavButton';
-import Cookies  from 'js-cookie';
 import HeaderIcons from "./HeaderIcons";
+import { useAuthStore } from "../../Stores/useAuthStore";
 
 
 export default function Header() {
-  const token = Cookies.get("token");
   const [isOpen, setIsOpen] = useState(false);
+  const token = useAuthStore((state) => state.token)
+
 
   return (
     <header className="bg-(--nav-bg) absolute  w-full z-30 ">
@@ -26,7 +27,7 @@ export default function Header() {
             <NavLinks />
           </ul>
 
-          {token ? <HeaderIcons /> : <NavButton /> }
+          {token ? <HeaderIcons /> : <NavButton />}
         </div>
         <FaListUl className="text-2xl block md:hidden cursor-pointer" onClick={() => { setIsOpen(!isOpen) }} />
       </div>

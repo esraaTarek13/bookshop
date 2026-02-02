@@ -7,7 +7,7 @@
     --secondary-color: #3B2F4A;  
     --nav-bg: #FFFFFF33;      
     --btn-color: #D9176C;
-    --btn-color-light: #D9176C1A; 
+    --btn-color-light: #D9176C1A;         
     --gradient-color: #00000099; 
 
     /* Text Color */
@@ -15,7 +15,7 @@
     --main-text-color-light: #22222280;   
     --secondary-text-color: #FFFFFF;  
     --first-text-yellow-color: #EAA451; 
-    --second-text-yellow-color: #EBC305;
+    --second-text-yellow-color: #EBC305; 
 
     /* Font Weight */
     --header-font-weight: 700;

@@ -14,7 +14,8 @@ export const registerSchema = yup.object({
         .email("*Please enter a valid email"),
     password: yup
         .string()
-        .required("*Password is required"),
+        .required("*Password is required")
+        .min(8, "The password field must be at least 8 characters."),
     password_confirmation: yup
         .string()
         .required("*Password confirmation is required")

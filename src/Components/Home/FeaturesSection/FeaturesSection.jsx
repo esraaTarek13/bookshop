@@ -1,9 +1,9 @@
-import { features } from "../../../constants/features";
+import { features } from './../../../Constants/Features';
 
 export default function FeaturesSection() {
    
     return (
-        <section className="py-20 lg:py-30">
+        <section className="py-20 lg:py-30 bg-(--main-color)">
             <div className="Custom-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12.5 lg:gap-15.25">
                 {features.map((feature) => (
                     <div key={feature.id}>

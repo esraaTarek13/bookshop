@@ -1,44 +1,35 @@
-
 // Home Slider Images
 export const images = [
-    {
-        id: 1,
-        src: "/images/book1.png"
-    },
-    {
-        id: 2,
-        src: "/images/book2.jpg"
-
-    },
-    {
-        id: 3,
-        src: "/images/book3.png"
-
-    },
-    {
-        id: 4,
-        src: "/images/book4.jpg"
-
-    },
-    {
-        id: 5,
-        src: "/images/book5.jpg"
-
-    },
-    {
-        id: 6,
-        src: "/images/book6.jpg"
-
-    },
-    {
-        id: 7,
-        src: "/images/book7.jpg"
-
-    },
-    {
-        id: 8,
-        src: "/images/book8.png"
-
-    },
-    
+    { id: 1, src: "/images/book1.png" },
+    { id: 2, src: "/images/book2.jpg" },
+    { id: 3, src: "/images/book3.png" },
+    { id: 4, src: "/images/book4.jpg" },
+    { id: 5, src: "/images/book5.jpg" },
+    { id: 6, src: "/images/book6.jpg" },
+    { id: 7, src: "/images/book7.jpg" },
+    { id: 8, src: "/images/book8.png" },
+    { id: 9, src: "/images/book1.png" },
+    { id: 10, src: "/images/book2.jpg" },
+    { id: 11, src: "/images/book3.png" },
+    { id: 12, src: "/images/book4.jpg" },
+    { id: 13, src: "/images/book5.jpg" },
+    { id: 14, src: "/images/book6.jpg" },
+    { id: 15, src: "/images/book7.jpg" },
+    { id: 16, src: "/images/book8.png" },
+    { id: 17, src: "/images/book1.png" },
+    { id: 18, src: "/images/book2.jpg" },
+    { id: 19, src: "/images/book3.png" },
+    { id: 20, src: "/images/book4.jpg" },
+    { id: 21, src: "/images/book5.jpg" },
+    { id: 22, src: "/images/book6.jpg" },
+    { id: 23, src: "/images/book7.jpg" },
+    { id: 24, src: "/images/book8.png" },
+    { id: 25, src: "/images/book1.png" },
+    { id: 26, src: "/images/book2.jpg" },
+    { id: 27, src: "/images/book3.png" },
+    { id: 28, src: "/images/book4.jpg" },
+    { id: 29, src: "/images/book5.jpg" },
+    { id: 30, src: "/images/book6.jpg" },
+    { id: 31, src: "/images/book7.jpg" },
+    { id: 32, src: "/images/book8.png" },
 ];

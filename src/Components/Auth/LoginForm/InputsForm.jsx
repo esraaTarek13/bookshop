@@ -11,23 +11,24 @@ import AuthButton from './../Buttons/AuthButton';
 // Login Form
 export default function InputsForm() {
   const [showPassword, setShowPassword] = useState(false)
-  const {mutate} = UseLogin();
+  const { mutate } = UseLogin();
 
   return (
     <div className="w-full">
       <Formik initialValues={{ email: "", password: "", checked: false }} validationSchema={loginSchema} onSubmit={(values) => { mutate(values) }}>
         <Form>
           <div className="flex flex-col gap-2">
-            <label htmlFor="email" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">Email</label>
-            <Field name="email" type="email" id="email" placeholder="example@gmail.com"
-              className="border border-[#22222233] rounded-(--btn-radius) p-4 outline-0 bg-(--secondary-text-color)" />
+            <label htmlFor="loginEmail" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Email</label>
+            <Field name="email" type="text" id="loginEmail" placeholder="example@gmail.com"
+              className="border border-[#22222233] rounded-(--btn-radius) p-4 outline-0 bg-(--secondary-text-color) text-sm md:text-base" />
             <ErrorMessage name="email" component="p" className="text-(--btn-color) text-sm mt-1" />
           </div>
 
           <div className="flex flex-col gap-2 mt-6">
-            <label htmlFor="password" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) text-[18px]">Password</label>
+            <label htmlFor="loginPassword" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Password</label>
             <div className="bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 flex justify-between items-center ">
-              <Field name="password" type={showPassword ? "text" : "password"} id="password" placeholder="Enter password" className="w-full border-0 outline-0" />
+              <Field name="password" type={showPassword ? "text" : "password"} id="loginPassword" placeholder="Enter password"
+                className="w-full border-0 outline-0 text-sm md:text-base" />
               {showPassword ? <FaEyeSlash onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" />
                 : <FaEye onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" />}
             </div>

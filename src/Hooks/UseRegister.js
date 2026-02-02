@@ -8,7 +8,7 @@ export const UseRegister = () => {
   return useMutation({
     mutationFn: RegisterApi,
     onSuccess: () => {
-      navigate("/login")
+      navigate("/login" , {replace: true})
     },
     onError: (error) => {
       console.log("Login failed", error.response?.data?.message);

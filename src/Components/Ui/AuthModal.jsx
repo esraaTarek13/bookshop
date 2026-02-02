@@ -23,7 +23,7 @@ export default function AuthModal() {
         <Modal
             isOpen={isOpen}
             onRequestClose={closeAuthModal}
-            overlayClassName="fixed inset-0 bg-black/50 flex justify-center items-center"
+            overlayClassName="fixed inset-0 z-10 bg-black/50 flex justify-center items-center"
             className="w-[80%] sm:w-[70%] md:w-[60%] lg:w-[40%] bg-(--secondary-text-color) border-[#22222233] rounded-(--section-radius) p-15 text-center">
             <h3 className="text-[20px] md:text-2xl font-(--text-font-weight) pb-10">Your should log in first!</h3>
             <div className="flex flex-col gap-4">

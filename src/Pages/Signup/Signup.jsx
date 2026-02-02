@@ -1,10 +1,10 @@
-import AuthHeroSection from "../../Components/HeroSection/AuthHeroSection";
+import HeroSection from "../../Components/HeroSection/HeroSection";
 import SignupForm from './../../Components/Auth/SignupForm/SignupForm';
 
 export default function Signup() {
   return (
     <>
-      <AuthHeroSection />
+    <HeroSection height="h-[40vh]"/>
       <SignupForm />
     </>
   )
