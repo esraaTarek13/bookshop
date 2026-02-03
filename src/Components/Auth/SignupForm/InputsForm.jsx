@@ -68,7 +68,6 @@ export default function InputsForm() {
                         <Field name="agree" type="checkbox" id="agree" />
                         <label htmlFor="agree">Agree with<span className="text-(--btn-color)"> Terms & Conditions</span></label>
                     </div>
-                    <ErrorMessage name="agree" component="p" className="text-(--btn-color) text-sm mt-1" />
 
                     {/* Signup Button */}
                     <AuthButton />

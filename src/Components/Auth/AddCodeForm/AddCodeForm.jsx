@@ -8,7 +8,7 @@ export default function AddCodeForm() {
           <h2 className="font-(--text-font-weight) text-(--btn-color)">Reset your password!</h2>
           <p className="text-(--main-text-color-light) text-sm pt-4">Enter the 4 dights code that you received on your email</p>
         </div>
-        
+
         <InputAddCode />
 
         <div className="flex justify-center pt-10 gap-0.5">

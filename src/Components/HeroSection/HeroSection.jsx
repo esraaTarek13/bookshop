@@ -2,7 +2,7 @@ import { useLocation } from "react-router-dom"
 import InputSearch from "../Ui/InputSearch";
 import AboutHeroContent from "./ِAboutHeroContent";
 
-export default function HeroSection({height}) {
+export default function HeroSection({ height }) {
     const location = useLocation();
 
     return (

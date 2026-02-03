@@ -12,6 +12,7 @@ import WishList from "../Pages/WishList/WishList";
 import ForgetPassword from "../Pages/ForgetPassword/ForgetPassword";
 import ResetPassword from "../Pages/ResetPassword/ResetPassword";
 import AddCode from "../Pages/AddCode/AddCode";
+import OrderHistory from "../Pages/OrderHistory/OrderHistory";
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
                {
                     path: "add-code",
                     element: <AddCode />
+               },
+               {
+                    path: "order-history",
+                    element: <OrderHistory />
                },
           ],
      },

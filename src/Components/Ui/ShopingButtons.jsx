@@ -4,8 +4,6 @@ import { RequireAuth } from "../../Utils/RequireAuth";
 
 
 export default function ShopingButtons() {
-
-
     const handleCartBtn = RequireAuth()
     const handleWishListBtn = RequireAuth()
 

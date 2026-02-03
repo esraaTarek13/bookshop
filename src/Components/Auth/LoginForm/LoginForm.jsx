@@ -21,7 +21,7 @@ export default function LoginForm() {
 
                 <p className="text-(--main-text-color-light)">or</p>
 
-               <SocialButton />
+                <SocialButton />
             </div>
         </div>
     )

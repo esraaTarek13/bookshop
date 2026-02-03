@@ -5,9 +5,9 @@ import Cookies from 'js-cookie';
 export const useAuthStore = create((set) => ({
     token: Cookies.get("token") || null,
 
-    login: (token) => {
+    login: (token, rememberMe = false) => {
         Cookies.set("token", token, {
-            expires: 7,
+            expires: rememberMe ? 30 : 1, 
             secure: true,
             sameSite: "Strict"
         });

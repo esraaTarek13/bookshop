@@ -8,13 +8,13 @@ export default function ForgetPasswordForm() {
 
 
     return (
-        <div className="h-screen bg-(--main-color) pt-15 ">
-            <div className="w-full px-3.75 mx-auto sm:w-[80%] md:w-[70%] lg:w-[50%]">
-                <div className="text-center pb-10">
-                    <h2 className="font-(--text-font-weight) text-(--btn-color)">Welcome Back!</h2>
-                    <p className="text-(--main-text-color-light) text-sm pt-4">Enter your email to reset your password</p>
-                </div>
-                <Formik initialValues={{ email: "" }} validationSchema={ForgetPasswordSchema} onSubmit={(values) => mutate(values)}>
+        <Formik initialValues={{ email: "" }} validationSchema={ForgetPasswordSchema} onSubmit={(values) => mutate(values)}>
+            <div className="h-screen bg-(--main-color) pt-15 ">
+                <div className="w-full px-3.75 mx-auto sm:w-[80%] md:w-[70%] lg:w-[50%]">
+                    <div className="text-center pb-10">
+                        <h2 className="font-(--text-font-weight) text-(--btn-color)">Welcome Back!</h2>
+                        <p className="text-(--main-text-color-light) text-sm pt-4">Enter your email to reset your password</p>
+                    </div>
                     <Form>
                         <div className="flex flex-col gap-2">
                             <label htmlFor="forgetEmail" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Email</label>
@@ -25,8 +25,8 @@ export default function ForgetPasswordForm() {
 
                         <AuthButton />
                     </Form>
-                </Formik>
+                </div>
             </div>
-        </div>
+        </Formik>
     )
 }

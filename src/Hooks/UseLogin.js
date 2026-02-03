@@ -10,9 +10,10 @@ export const UseLogin = () => {
 
     return useMutation({
         mutationFn: LoginApi,
-        onSuccess: (res) => {
+        onSuccess: (res, values) => {
             const token = res.data.data.token
-            login(token)
+            const rememberMe = values.checked;
+            login(token, rememberMe)
             navigate("/", { replace: true })
         },
         onError: (error) => {

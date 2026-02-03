@@ -11,6 +11,5 @@ export const loginSchema = yup.object({
       .required("*Password is required")
       .min(8, "The password field must be at least 8 characters."),
     checked: yup
-      .boolean()
-      .oneOf([true])
+      .boolean(),
   })
