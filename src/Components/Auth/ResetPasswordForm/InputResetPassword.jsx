@@ -10,7 +10,9 @@ export default function InputResetPassword() {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false)
 
     return (
-        <Formik>
+        <Formik initialValues={{password: "", password_confirmation: "", checked: false}}
+        validationSchema={ResetPasswordSchema}
+        onSubmit={(values) => console.log(values)}>
             <Form>
                 <div className="flex flex-col gap-2 mt-6">
                     <label htmlFor="password" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Password</label>

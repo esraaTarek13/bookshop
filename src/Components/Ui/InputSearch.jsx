@@ -4,8 +4,8 @@ import { Field, Form, Formik } from "formik";
 import { SearchSchema } from "../../Validation/SearchSchema";
 
 
+// Formik form to handle search input with validation
 export default function InputSearch() {
-
     return (
         <Formik initialValues={{ search: "" }} validationSchema={SearchSchema} onSubmit={(values) => console.log(values)}>
             <Form autoComplete="off" className="w-[90%] sm:w-[70%] md:w-[50%] lg:w-[40%] h-12.5 bg-(--secondary-text-color) rounded-full flex items-center justify-between">

@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { useAuthStore } from "../Stores/useAuthStore";
 import { toast } from "react-hot-toast";
 
+// Custom hook to handle login, store token, and navigate on success
 export const UseLogin = () => {
     const navigate = useNavigate();
     const login = useAuthStore((state) => state.login)

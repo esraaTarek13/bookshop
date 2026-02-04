@@ -1,5 +1,6 @@
 import InputAddCode from "./InputAddCode";
 
+// OTP Section
 export default function AddCodeForm() {
   return (
     <div className="h-screen bg-(--main-color) pt-15 ">

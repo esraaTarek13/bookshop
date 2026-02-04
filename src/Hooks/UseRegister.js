@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query"
 import { RegisterApi } from "../Api/AuthApi"
 import { useNavigate } from "react-router-dom"
 
+// Custom hook to handle user registration and navigate on success
 export const UseRegister = () => {
   const navigate = useNavigate();
 

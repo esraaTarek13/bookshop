@@ -1,7 +1,7 @@
 import ContactForm from "./ContactForm";
 import ContactInfo from "./ContactInfo";
 
-
+// Contact section with form and contact info
 export default function QuestionSection() {
     return (
         <section className="bg-(--secondary-color)">

@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-// Form Validation
+// Contact Validation
 export const ContactSchema = yup.object({
     name: yup
         .string()

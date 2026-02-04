@@ -1,5 +1,6 @@
 import * as yup from "yup";
 
+// OTP Validation
 export const OtpSchema = yup.object({
   otp: yup
     .string()

@@ -2,7 +2,7 @@ import { OtpSchema } from '../../../Validation/OtpSchema';
 import AuthButton from './../Buttons/AuthButton';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-
+// OTP input
 export default function InputAddCode() {
     const otpBoxes = [0, 1, 2, 3]
     return (

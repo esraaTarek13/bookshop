@@ -1,5 +1,7 @@
 import { useLayoutEffect } from "react";
 
+
+// Hook to lock body scroll when a modal is open
 export default function useLockBodyScroll(isLocked) {
     useLayoutEffect(() => {
         if (isLocked) {

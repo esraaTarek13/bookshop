@@ -3,10 +3,10 @@ import { IoCartOutline } from "react-icons/io5";
 import { RequireAuth } from "../../Utils/RequireAuth";
 
 
+// Auth-protected shopping buttons
 export default function ShopingButtons() {
     const handleCartBtn = RequireAuth()
     const handleWishListBtn = RequireAuth()
-
 
     return (
         <div className="flex items-center gap-4 pt-4">

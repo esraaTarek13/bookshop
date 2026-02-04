@@ -1,6 +1,6 @@
 import { Missions } from "../../../Constants/Missions";
 
-
+// Missions section
 export default function MissionsSection() {
     return (
         <section className="py-20 lg:py-30 bg-(--main-color)">

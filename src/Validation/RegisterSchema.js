@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-// Form Validation
+// Register Validation
 export const registerSchema = yup.object({
     first_name: yup
         .string()

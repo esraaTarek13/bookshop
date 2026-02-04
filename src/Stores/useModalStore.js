@@ -1,5 +1,6 @@
 import { create } from "zustand";
 
+// Modal state store
 const useModalStore = create((set) => ({
     isAuthModalOpen: false,
     isProfileMenuOpen: false,

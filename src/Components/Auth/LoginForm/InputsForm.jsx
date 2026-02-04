@@ -15,7 +15,9 @@ export default function InputsForm() {
 
   return (
     <div className="w-full">
-      <Formik initialValues={{ email: "", password: "", checked: false }} validationSchema={loginSchema} onSubmit={(values) => { mutate(values) }}>
+      <Formik initialValues={{ email: "", password: "", checked: false }}
+        validationSchema={loginSchema}
+        onSubmit={(values) => { mutate(values) }}>
         <Form>
           <div className="flex flex-col gap-2">
             <label htmlFor="loginEmail" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Email</label>

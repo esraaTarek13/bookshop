@@ -6,6 +6,7 @@ import router from "./Routes/Routes";
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Modal from "react-modal";
 import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 const queryClient = new QueryClient();

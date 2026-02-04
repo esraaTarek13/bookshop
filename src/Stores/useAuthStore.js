@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import Cookies from 'js-cookie';
 
-
+// Auth store to manage token, login, and logout
 export const useAuthStore = create((set) => ({
     token: Cookies.get("token") || null,
 

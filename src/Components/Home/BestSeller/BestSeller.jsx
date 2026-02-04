@@ -1,7 +1,8 @@
-import Slider from "./Slider";
+import Marquee from "./Marquee";
 import ShopButton from "./ShopButton";
 
 
+// Best Seller section
 export default function BestSeller() {
     return (
         <section className="overflow-hidden bg-(--secondary-color) py-30 flex flex-col gap-10 md:gap-15 lg:gap-20 items-center justify-center text-(--secondary-text-color)">
@@ -10,7 +11,7 @@ export default function BestSeller() {
                 <p className="text-[14px] md:text-[16px] pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris et ultricies est. Aliquam in justo varius, sagittis neque ut, malesuada leo.</p>
             </div>
 
-            <Slider />
+            <Marquee />
 
             <ShopButton />
         </section>

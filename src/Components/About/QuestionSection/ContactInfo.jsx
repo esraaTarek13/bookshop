@@ -1,5 +1,6 @@
 import { Contact } from "../../../Constants/Contact";
 
+// Contact info list
 export default function ContactInfo() {
     return (
         <div className="flex lg:justify-center lg:items-start">

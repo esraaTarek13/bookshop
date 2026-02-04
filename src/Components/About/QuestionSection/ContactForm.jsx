@@ -5,7 +5,7 @@ import { BiUser } from "react-icons/bi";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { GoPencil } from "react-icons/go";
 
-
+// Contact Form
 export default function ContactForm() {
     const { mutate } = UseContact()
     return (

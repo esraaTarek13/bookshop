@@ -2,6 +2,7 @@ import { useMutation } from "@tanstack/react-query"
 import { ForgetPasswordApi } from "../Api/AuthApi"
 import { useNavigate } from "react-router-dom";
 
+// Custom hook to handle forget password requests
 export const UseForgetPassword = () => {
     const navigate = useNavigate();
 

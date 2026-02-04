@@ -4,13 +4,12 @@ import Modal from 'react-modal';
 import useLockBodyScroll from "../../Hooks/UseLockBodyScroll";
 
 export default function AuthModal() {
+    // Get modal state and close function from Zustand store
     const isOpen = useModalStore((state) => state.isAuthModalOpen);
     const close = useModalStore((state) => state.closeAuthModal);
 
     // Lock scroll when modal is open
     useLockBodyScroll(isOpen);
-
-
     return (
         <Modal
             isOpen={isOpen}

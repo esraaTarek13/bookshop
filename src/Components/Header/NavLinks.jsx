@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { navLinks } from "../../constants/NavLinks";
 
+// Navigation links
 export default function NavLinks() {
   const location = useLocation()
 

@@ -1,6 +1,6 @@
 import * as yup from "yup";
 
-// Form Validation
+// ResetPassword Validation
 export const ResetPasswordSchema = yup.object({
     password: yup
         .string()
