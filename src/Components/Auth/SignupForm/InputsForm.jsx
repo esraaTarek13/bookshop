@@ -19,8 +19,8 @@ export default function InputsForm() {
                 <Form>
                     <div className="w-full md:flex gap-4">
                         <div className="flex flex-col gap-2 md:w-[50%]">
-                            <label htmlFor="fristName" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">First Name</label>
-                            <Field name="first_name" type="text" id="fristName" placeholder="John"
+                            <label htmlFor="firstName" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">First Name</label>
+                            <Field name="first_name" type="text" id="firstName" placeholder="John"
                                 className="text-sm md:text-base bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 outline-0" />
                             <ErrorMessage name="first_name" component="p" className="text-(--btn-color) text-sm mt-1" />
                         </div>

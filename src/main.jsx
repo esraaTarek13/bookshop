@@ -9,7 +9,15 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient(
+  {
+    defaultOptions: {
+      queries: {
+        refetchOnWindowFocus: false
+      }
+    }
+  }
+);
 Modal.setAppElement("#root");
 
 createRoot(document.getElementById('root')).render(

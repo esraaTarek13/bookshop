@@ -1,5 +1,6 @@
 import { UseHome } from "../../../Hooks/UseHome"
 import { renderStars } from "../../../Utils/RenderStars";
+import Loader from "../../Ui/Loader";
 import ShopingButtons from "../../Ui/ShopingButtons";
 
 
@@ -9,7 +10,7 @@ export default function RecomendedCart() {
     return (
         <>
             {isLoading && (
-                <div className="w-5 h-5 rounded-full animate-spin border-2 border-l-transparent border-(--secondary-color)"></div>
+                <Loader />
             )}
 
             {isError && (
