@@ -24,20 +24,28 @@ export default function Header() {
       <div className="Custom-container flex justify-between md:gap-6 items-center py-7.5 font-(--text-font-weight) text-(--secondary-text-color) text-[18px]">
 
         <div className="md:w-50">
-          <Link to="/"><img src="/images/logo.png" alt="Logo" className="md:border-r md:border-[#FFFFFF4D] md:px-6 h-full w-full object-contain" /></Link>
+          <Link to="/">
+            <img src="/images/logo.png" alt="Logo" className="md:border-r md:border-[#FFFFFF4D] md:px-6 h-full w-full object-contain" />
+          </Link>
         </div>
 
         {/* Navigation menu */}
-        <div className={`${isOpen ? "translate-y-0 opacity-[1]" : "translate-y-[150%]"} h-screen md:h-fit md:translate-0 pt-15 px-5 md:p-0 fixed z-20 md:relative right-0 top-0 bg-(--main-color) md:bg-transparent text-(--main-text-color) md:text-inherit flex flex-col-reverse md:flex-row items-center justify-end md:justify-between w-full transition-transform md:transition-none duration-700`}>
+        <div
+          className={`${isOpen ? "translate-y-0 opacity-[1]" : "translate-y-[150%]"} 
+                    h-screen md:h-fit md:translate-0 pt-15 px-5 md:p-0 fixed z-20 md:relative right-0 top-0 bg-(--main-color) md:bg-transparent text-(--main-text-color) md:text-inherit flex flex-col-reverse md:flex-row items-center justify-end md:justify-between w-full transition-transform md:transition-none duration-700`}>
           <ul className="flex flex-col md:flex-row gap-10 md:gap-6 items-center">
             <NavLinks />
           </ul>
+
           <div className="w-full md:w-fit flex md:block justify-between items-center mb-20 md:mb-0">
             {token ? <HeaderIcons /> : <NavButton />}
 
+            {/* Close icon for mobile menu */}
             <IoCloseSharp onClick={() => { setIsOpen(!isOpen) }} className="md:hidden text-3xl cursor-pointer" />
           </div>
         </div>
+
+        {/* Hamburger icon to open mobile menu */}
         <FaListUl className="text-2xl block md:hidden cursor-pointer" onClick={() => { setIsOpen(!isOpen) }} />
       </div>
     </header>
