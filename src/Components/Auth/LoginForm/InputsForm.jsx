@@ -1,16 +1,14 @@
-import { Field, Formik, Form, ErrorMessage } from "formik";
+import { Field, Formik, Form } from "formik";
 import { Link } from "react-router-dom";
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa6";
-import { useState } from "react";
 import { loginSchema } from "../../../Validation/LoginSchema";
 import { UseLogin } from "../../../Hooks/UseLogin";
 import AuthButton from './../Buttons/AuthButton';
+import PasswordField from "../PasswordField";
+import EmailField from "../EmailField";
 
 
 // Login Form
 export default function InputsForm() {
-  const [showPassword, setShowPassword] = useState(false)
   const { mutate } = UseLogin();
 
   return (
@@ -19,23 +17,17 @@ export default function InputsForm() {
         validationSchema={loginSchema}
         onSubmit={(values) => { mutate(values) }}>
         <Form>
-          <div className="flex flex-col gap-2">
-            <label htmlFor="loginEmail" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Email</label>
-            <Field name="email" type="text" id="loginEmail" placeholder="example@gmail.com"
-              className="border border-[#22222233] rounded-(--btn-radius) p-4 outline-0 bg-(--secondary-text-color) text-sm md:text-base" />
-            <ErrorMessage name="email" component="p" className="text-(--btn-color) text-sm mt-1" />
-          </div>
+          <EmailField
+            name="email"
+            id="loginEmail"
+            label="Email"
+            placeholder="example@gmail.com" />
 
-          <div className="flex flex-col gap-2 mt-6">
-            <label htmlFor="loginPassword" className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">Password</label>
-            <div className="bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 flex justify-between items-center ">
-              <Field name="password" type={showPassword ? "text" : "password"} id="loginPassword" placeholder="Enter password"
-                className="w-full border-0 outline-0 text-sm md:text-base" />
-              {showPassword ? <FaEyeSlash onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" />
-                : <FaEye onClick={() => setShowPassword(!showPassword)} className="text-[#878A99] cursor-pointer" />}
-            </div>
-            <ErrorMessage name="password" component="p" className="text-(--btn-color) text-sm mt-1" />
-          </div>
+          <PasswordField
+            name="password"
+            id="loginPassword"
+            label="Password"
+            placeholder="Enter password" />
 
           <div className="pt-4 flex justify-between">
             <div className="flex gap-2">

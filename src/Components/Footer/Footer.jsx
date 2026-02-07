@@ -10,13 +10,17 @@ export default function Footer() {
         <FooterLinks />
 
         <div className="flex flex-col-reverse md:flex-row justify-between md:items-center border-t border-[#FFFFFF80] pt-4">
-          <p className="pt-6 md:pt-0 text-[12px] md:text-[16px] text-center md:text-start">&lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024</p>
+          {/* Copyright text */}
+          <p className="pt-6 md:pt-0 text-[12px] md:text-[16px] text-center md:text-start">
+            &lt;Developed By&lt; EraaSoft &lt;All Copy Rights Reserved @2024
+          </p>
 
+          {/* Language selector */}
           <div className="flex gap-4 items-center">
-            <TiWorld className="text-4xl"/>
+            <TiWorld className="text-4xl" />
             <div className="w-full md:-w-fit flex justify-between items-center border border-[#FFFFFF80] rounded-(--btn-radius) p-4 text-[#FFFFFF80]">
-              <input type="text" placeholder="English" className="outline-0 "/>
-              <FaAngleRight className="text-2xl"/>
+              <input type="text" placeholder="English" className="outline-0 " />
+              <FaAngleRight className="text-2xl" />
             </div>
           </div>
         </div>

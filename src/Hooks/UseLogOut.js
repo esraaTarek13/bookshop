@@ -11,8 +11,5 @@ export const UseLogOut = () => {
         onSuccess: () => {
             logOut()
         },
-        onError: (error) => {
-            console.log(error);
-        }
     })
 }

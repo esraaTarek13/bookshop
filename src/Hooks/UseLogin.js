@@ -11,13 +11,19 @@ export const UseLogin = () => {
 
     return useMutation({
         mutationFn: LoginApi,
+        onMutate: () => {
+            toast.loading("Logging in...");
+        },
         onSuccess: (res, values) => {
+            toast.dismiss();
+
             const token = res.data.data.token
             const rememberMe = values.checked;
             login(token, rememberMe)
             navigate("/", { replace: true })
         },
         onError: (error) => {
+            toast.dismiss();
             const message = error.response?.data?.message || "Login failed";
             toast.error(message);
         }

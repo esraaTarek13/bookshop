@@ -7,6 +7,8 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import Modal from "react-modal";
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { Toaster } from "react-hot-toast";
+
 
 
 const queryClient = new QueryClient(
@@ -23,6 +25,10 @@ Modal.setAppElement("#root");
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
+       <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
       <RouterProvider router={router}>
         <App />
       </RouterProvider>

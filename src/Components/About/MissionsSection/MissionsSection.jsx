@@ -11,9 +11,10 @@ export default function MissionsSection() {
                             <h3 className="text-(--main-text-color) text-[18px] lg:text-[22px] font-(--header-font-weight)">{mission.title}</h3>
                             <p className="text-(--main-text-color-light) text-[14px] md:text-[16px] pt-4 lg:pt-6">{mission.description}</p>
                         </div>
-                        <div className="flex items-center gap-2 text-(--btn-color) text-ms md:text-base cursor-pointer">
+
+                        <div className="flex items-center gap-2 text-(--btn-color) text-ms md:text-base cursor-pointer group">
                             <p>{mission.actionText}</p>
-                            <span>{mission.icon}</span>
+                            <span className="transition-transform duration-300 group-hover:translate-x-1">{mission.icon}</span>
                         </div>
                     </div>
                 ))}

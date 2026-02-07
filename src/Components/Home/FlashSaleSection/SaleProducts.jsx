@@ -4,6 +4,8 @@ import { Navigation } from 'swiper/modules';
 import SaleProductCard from './SaleProductCard';
 import Loader from '../../Ui/Loader';
 
+
+// Displays flash sale products in a slider and handles loading/error states
 export default function SaleProducts() {
   const { data, isLoading, isError, error } = UseHome();
 

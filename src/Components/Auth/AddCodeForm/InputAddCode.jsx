@@ -7,7 +7,10 @@ export default function InputAddCode() {
     const otpBoxes = [0, 1, 2, 3]
     return (
         <div>
-            <Formik initialValues={{ otp: "" }} validationSchema={OtpSchema} onSubmit={(values) => console.log(values)}>
+            <Formik
+                initialValues={{ otp: "" }}
+                validationSchema={OtpSchema}
+                onSubmit={(values) => console.log(values)}>
                 {({ values, setFieldValue }) =>
                     <Form>
                         <div className='flex items-center justify-center gap-6'>

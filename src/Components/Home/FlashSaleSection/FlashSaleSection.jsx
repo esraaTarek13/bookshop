@@ -1,7 +1,7 @@
 import SaleProducts from "./SaleProducts";
 import "./FlashSaleSection.css";
 
-// Flash Sale section
+// Flash Sale section displaying discounted products
 export default function FlashSaleSection() {
     return (
         <section className="bg-(--main-color) py-15 md:py-20 lg:py-30 border-t border-(#22222233)" >

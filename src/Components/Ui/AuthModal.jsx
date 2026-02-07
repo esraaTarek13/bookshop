@@ -21,7 +21,7 @@ export default function AuthModal() {
                 <Link
                     to="/login"
                     onClick={close}
-                    className="bg-(--btn-color) text-(--secondary-text-color) border border-(--btn-color) rounded-(--btn-radius) outline-0 py-3.25 text-[12px] md:text-[14px] lg:text-[16px] cursor-pointer">
+                    className="bg-(--btn-color) text-(--secondary-text-color) border border-(--btn-color) rounded-(--btn-radius) outline-0 py-3.25 text-[12px] md:text-[14px] lg:text-[16px] cursor-pointer hover:bg-transparent hover:text-(--btn-color) transition-all duration-300">
                     Log in
                 </Link>
                 <Link
