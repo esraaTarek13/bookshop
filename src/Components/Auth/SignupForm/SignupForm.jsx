@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SocialButton from './../Buttons/SocialButton';
-import InputsForm from './InputsForm';
+import InputSignup from "./InputSignup";
 
 // Register Section
 export default function SignupForm() {
@@ -9,7 +9,7 @@ export default function SignupForm() {
             <div className="w-full px-3.75 mx-auto sm:w-[80%] md:w-[70%] lg:w-[50%] flex flex-col items-center gap-10">
 
                 {/* Form */}
-                <InputsForm />
+                <InputSignup />
 
                 <div className="flex gap-0.5">
                     <p>Already have an account?</p>

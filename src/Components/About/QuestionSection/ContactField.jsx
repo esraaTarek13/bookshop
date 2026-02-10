@@ -1,4 +1,5 @@
 import { ErrorMessage, Field } from "formik";
+import "./Contact.css"
 
 
 export default function ContactField({ name, placeholder, icon, isTextarea }) {
@@ -12,10 +13,12 @@ export default function ContactField({ name, placeholder, icon, isTextarea }) {
                     type={isTextarea ? undefined : "text"}
                     placeholder={placeholder}
                     rows={isTextarea ? 5 : undefined}
-                    className="w-full text-sm md:text-base text-[#FFFFFF] outline-0"
+                    className="w-full bg-transparent text-sm md:text-base text-[#FFFFFF] outline-0"
                 />
             </div>
-            <ErrorMessage name={name} component="p" className="text-(--btn-color) text-sm mt-1" />
+            <div className="h-5 mt-2">
+                <ErrorMessage name={name} component="p" className="text-(--btn-color) text-sm" />
+            </div>
         </>
     )
 }

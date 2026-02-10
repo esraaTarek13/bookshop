@@ -2,32 +2,39 @@ import { Field, Formik, Form } from "formik";
 import { Link } from "react-router-dom";
 import { loginSchema } from "../../../Validation/LoginSchema";
 import { UseLogin } from "../../../Hooks/UseLogin";
-import AuthButton from './../Buttons/AuthButton';
-import PasswordField from "../PasswordField";
-import EmailField from "../EmailField";
+import AuthButton from '../Buttons/AuthButton';
+import MainField from "../../Ui/MainField";
 
 
 // Login Form
-export default function InputsForm() {
+export default function InputLogin() {
   const { mutate } = UseLogin();
 
   return (
     <div className="w-full">
-      <Formik initialValues={{ email: "", password: "", checked: false }}
+      <Formik
+        initialValues={{ email: "", password: "", checked: false }}
         validationSchema={loginSchema}
         onSubmit={(values) => { mutate(values) }}>
+
         <Form>
-          <EmailField
+          <MainField
             name="email"
+            type="text"
             id="loginEmail"
             label="Email"
-            placeholder="example@gmail.com" />
+            placeholder="example@gmail.com"
+            fn={false}
+          />
 
-          <PasswordField
+          <MainField
             name="password"
+            type="password"
             id="loginPassword"
             label="Password"
-            placeholder="Enter password" />
+            placeholder="Enter password"
+            fn={true}
+          />
 
           <div className="pt-4 flex justify-between">
             <div className="flex gap-2">
@@ -38,7 +45,7 @@ export default function InputsForm() {
           </div>
 
           {/* Login Button */}
-          <AuthButton />
+          <AuthButton content={"Login"} />
         </Form>
       </Formik>
     </div>

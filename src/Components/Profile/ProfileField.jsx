@@ -1,14 +1,65 @@
-import { Field } from "formik"
+import MainField from './../Ui/MainField';
 
-// Reusable input field for profile form
-export default function ProfileField({ label, name, id, type = "text" }) {
+export default function ProfileField({isEditing}) {
     return (
         <>
-            <label htmlFor={id} className="cursor-pointer text-(--main-text-color-light) md:text-sm">
-                {label}
-            </label>
-            <Field name={name} type={type} id={id}
-                className="text-sm md:text-base bg-(--secondary-text-color) border border-[#22222233] rounded-(--btn-radius) p-4 outline-0" />
+            <div className="w-full md:flex gap-4">
+                <div className="flex flex-col gap-2 md:w-[50%]">
+                    <MainField
+                        name="first_name"
+                        type="text"
+                        id="first_name"
+                        label="First Name"
+                        fn={false}
+                        readOnly={!isEditing}
+                    />
+                </div>
+
+                <div className="flex flex-col gap-2 md:w-[50%] mt-3 md:mt-0">
+                    <MainField
+                        name="last_name"
+                        type="text"
+                        id="last_name"
+                        label="Last Name"
+                        fn={false}
+                        readOnly={!isEditing}
+                    />
+                </div>
+            </div>
+
+            <div className="flex flex-col gap-2 mt-3">
+                <MainField
+                    name="email"
+                    type="text"
+                    id="emailProfile"
+                    label="Email"
+                    fn={false}
+                    readOnly={!isEditing}
+                />
+            </div>
+
+            <div className="flex flex-col gap-2 mt-3">
+                <MainField
+                    name="phone"
+                    type="text"
+                    id="phone"
+                    label="Phone"
+                    placeholder="Phone number"
+                    fn={false}
+                    readOnly={!isEditing}
+                />
+            </div>
+
+            <div className="flex flex-col gap-2 mt-3">
+                <MainField
+                    name="address"
+                    type="text"
+                    id="address"
+                    label="Address"
+                    fn={false}
+                    readOnly={!isEditing}
+                />
+            </div>
         </>
     )
 }

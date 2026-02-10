@@ -1,0 +1,7 @@
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+-webkit-box-shadow: 0 0 0 1000px rgba(162, 16, 16, 0) inset !important;
+  -webkit-text-fill-color: var(--secondary-text-color) !important;
+  background-color: transparent !important; /* اختياري */
+}

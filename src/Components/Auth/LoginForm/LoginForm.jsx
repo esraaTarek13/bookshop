@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import SocialButton from './../Buttons/SocialButton';
-import InputsForm from './InputsForm';
+import InputLogin from "./InputLogin";
 
 
 // Login Section
@@ -12,7 +12,7 @@ export default function LoginForm() {
                 <h2 className="font-(--text-font-weight) text-(--btn-color)">Welcome Back!</h2>
 
                 {/* Form */}
-                <InputsForm />
+                <InputLogin />
 
                 <div className="flex gap-0.5">
                     <p>Don’t have an account?</p>

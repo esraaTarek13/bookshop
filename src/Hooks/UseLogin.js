@@ -18,8 +18,10 @@ export const UseLogin = () => {
             toast.dismiss();
 
             const token = res.data.data.token
+            const user = res.data.data.user
             const rememberMe = values.checked;
-            login(token, rememberMe)
+            login(token, user, rememberMe)
+            
             navigate("/", { replace: true })
         },
         onError: (error) => {

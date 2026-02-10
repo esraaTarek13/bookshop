@@ -1,12 +1,23 @@
-import * as Yup from "yup";
+import * as yup from "yup";
 
 // Profile Schema
-export const ProfileSchema = Yup.object({
-    address: Yup.string()
+export const ProfileSchema = yup.object({
+    first_name: yup
+        .string(),
+
+    last_name: yup
+        .string(),
+
+    email: yup
+        .string()
+        .email("*Please enter a valid email"),
+
+    address: yup
+        .string()
         .nullable()
         .test(
             "valid-address",
-            "Address must contain only letters and numbers, and be long enough",
+            "*Address must contain only letters and numbers, and be long enough",
             (value) => {
                 if (!value) return true;
                 return (
@@ -16,11 +27,12 @@ export const ProfileSchema = Yup.object({
             }
         ),
 
-    phone: Yup.string()
+    phone: yup
+        .string()
         .nullable()
         .test(
             "valid-phone",
-            "Phone number is invalid",
+            "*Phone number is invalid",
             (value) => {
                 if (!value) return true;
                 return /^[0-9]+$/.test(value) && value.length >= 10 && value.length <= 15;

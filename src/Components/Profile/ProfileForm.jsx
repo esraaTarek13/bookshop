@@ -1,29 +1,30 @@
-import { ErrorMessage, Form, Formik } from "formik"
+import { Form, Formik } from "formik"
 import { useUpdateProfile } from "../../Hooks/UseProfile"
 import ProfileImage from "./ProfileImage";
-import ProfileField from "./ProfileField";
-import Loader from "../Ui/Loader";
 import { ProfileSchema } from "../../Validation/ProfileSchema";
+import { useState } from "react";
+import ProfileField from "./ProfileField";
 
 export default function ProfileForm({ profileData }) {
-  const { mutate, isLoading } = useUpdateProfile()
+  const [isEditing, setIsEditing] = useState(false)
+  const { mutate } = useUpdateProfile()
 
-  // Handle form submit (send only required fields)
+  // Handle form submit (send fields)
   const onSubmit = (values) => {
-    const { phone, address } = values;
-    mutate({ phone, address });
+    const { first_name, last_name, email, phone, address } = values;
+    mutate({ first_name, last_name, email, phone, address });
+    setIsEditing(false);
   }
 
   return (
-    <Formik
-      initialValues={profileData}
-      enableReinitialize={true}
-      validationSchema={ProfileSchema}
-      onSubmit={onSubmit}
-    >
-
-      {({ handleSubmit }) => (
-        <Form onSubmit={handleSubmit} autoComplete="off"
+    <>
+      <Formik
+        initialValues={profileData}
+        enableReinitialize={true}
+        validationSchema={ProfileSchema}
+        onSubmit={onSubmit}
+      >
+        <Form autoComplete="off"
           className="w-full flex flex-col justify-center items-center">
 
           <ProfileImage image={profileData?.image} />
@@ -33,41 +34,34 @@ export default function ProfileForm({ profileData }) {
               General information
             </h3>
 
-
-            <div className="w-full md:flex gap-4">
-              <div className="flex flex-col gap-2 md:w-[50%]">
-                <ProfileField name="first_name" id="first_name" label="First Name" />
-              </div>
-
-              <div className="flex flex-col gap-2 md:w-[50%] mt-6 md:mt-0">
-                <ProfileField name="last_name" id="last_name" label="Last Name" />
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-2 mt-6">
-              <ProfileField name="email" id="email-input" label="Email" />
-            </div>
-
-            <div className="flex flex-col gap-2 mt-6">
-              <ProfileField name="phone" id="phone" label="Phone number" />
-              <ErrorMessage name="phone" component="p" className="text-(--btn-color) text-sm mt-1" />
-            </div>
-
-            <div className="flex flex-col gap-2 mt-6">
-              <ProfileField name="address" id="address" label="Address" />
-              <ErrorMessage name="address" component="p" className="text-(--btn-color) text-sm mt-1" />
-            </div>
+            <ProfileField isEditing={isEditing} />
           </div>
 
           {/* Submit button with loading state */}
-          <button type="submit"
-            disabled={isLoading}
-            className="mt-10 bg-(--btn-color) py-2 px-11 md:py-3 md:px-13.25 rounded-(--btn-radius) font-(--text-font-weight) text-[16px] md:text-[18px] text-(--secondary-text-color) cursor-pointer border border-(--btn-color) hover:bg-transparent hover:text-(--btn-color) transition duration-500">
-            {isLoading ? <Loader /> : "Update information"}
-          </button>
+          {isEditing && (
+            <button
+              type="submit"
+              className="mt-10 bg-(--btn-color) py-2 px-11 md:py-3 md:px-13.25 rounded-(--btn-radius) font-(--text-font-weight) text-[16px] md:text-[18px] text-(--secondary-text-color) cursor-pointer border border-(--btn-color) hover:bg-transparent hover:text-(--btn-color) transition duration-500"
+            >
+              Save information
+            </button>
+          )}
+
         </Form>
+      </Formik>
+
+      {!isEditing && (
+        <div className="flex justify-center items-center">
+          <button
+            type="button"
+            onClick={() => setIsEditing(true)}
+            className="mt-10 bg-(--btn-color) py-2 px-11 md:py-3 md:px-13.25 rounded-(--btn-radius) font-(--text-font-weight) text-[16px] md:text-[18px] text-(--secondary-text-color) cursor-pointer border border-(--btn-color) hover:bg-transparent hover:text-(--btn-color) transition duration-500"
+          >
+            Update information
+          </button>
+        </div>
       )}
-    </Formik>
+    </>
   )
 }
 

@@ -1,12 +1,14 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ProfileMenu from "./ProfileMenu";
-import { useProfile } from './../../Hooks/UseProfile';
 import useModalStore from './../../Stores/useModalStore';
+import { useAuthStore } from "../../Stores/useAuthStore";
 
 
 export default function ProfileSection() {
-    const { data } = useProfile()   // Fetch user profile data
-    const openMenu = useModalStore((state) => state.toggleModal) // Toggle profile menu
+    const user = useAuthStore((state) => state.user); // Fetch user profile data
+    console.log(user);
+    
+    const openMenu = useModalStore((state) => state.toggleModal); // Toggle profile menu
 
     return (
         <>
@@ -19,8 +21,8 @@ export default function ProfileSection() {
                 </div>
 
                 <div>
-                    <h6 className="font-(--text-font-weight) text-sm lg:text-base">{data?.first_name} {data?.last_name}</h6>
-                    <p className="font-light text-xs lg:text-sm">{data?.email}</p>
+                    <h6 className="font-(--text-font-weight) text-sm lg:text-base">{user?.first_name} {user?.last_name}</h6>
+                    <p className="font-light text-xs lg:text-sm">{user?.email}</p>
                 </div>
 
                 {/* Dropdown arrow */}

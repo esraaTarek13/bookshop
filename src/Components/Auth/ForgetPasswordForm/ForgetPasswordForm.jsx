@@ -2,7 +2,7 @@ import { Form, Formik } from "formik";
 import AuthButton from "../Buttons/AuthButton";
 import { UseForgetPassword } from "../../../Hooks/UseForgetPassword";
 import { ForgetPasswordSchema } from "../../../Validation/ForgetPasswordSchema";
-import EmailField from "../EmailField";
+import MainField from "../../Ui/MainField";
 
 export default function ForgetPasswordForm() {
     const { mutate } = UseForgetPassword()
@@ -21,13 +21,16 @@ export default function ForgetPasswordForm() {
                             <p className="text-(--main-text-color-light) text-sm pt-4">Enter your email to reset your password</p>
                         </div>
 
-                        <EmailField
+                        <MainField
                             name="email"
-                            id="Email"
+                            type="text"
+                            id="email"
                             label="Email"
-                            placeholder="example@gmail.com" />
+                            placeholder="example@gmail.com"
+                            fn={false}
+                        />
 
-                        <AuthButton />
+                        <AuthButton content={"Send reset code"} />
                     </div>
                 </div>
             </Form>

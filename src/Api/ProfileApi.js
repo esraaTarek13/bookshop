@@ -1,9 +1,9 @@
 import axiosInstance from './AxiosInstance';
-import Cookies from 'js-cookie';
+import { useAuthStore } from './../Stores/useAuthStore';
 
 // Add API calls for fetching and updating user data
 export const profileApi = () => {
-    const token = Cookies.get("token");
+    const token = useAuthStore.getState().token;
 
     return axiosInstance.get("/profile", {
         headers: {
@@ -13,7 +13,7 @@ export const profileApi = () => {
 };
 
 export const updateProfileApi = (values) => {
-    const token = Cookies.get("token");
+    const token = useAuthStore.getState().token;
 
     return axiosInstance.post("/profile/update", values, {
         headers: {

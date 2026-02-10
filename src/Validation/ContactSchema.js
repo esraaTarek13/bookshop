@@ -9,6 +9,9 @@ export const ContactSchema = yup.object({
         .string()
         .required("*Email is required")
         .email("*Please enter a valid email"),
+    subject: yup
+        .string()
+        .required("Subject is required"),
     message: yup
         .string()
         .required("*Enter your message"),

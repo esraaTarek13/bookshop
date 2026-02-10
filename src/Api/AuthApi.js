@@ -1,5 +1,5 @@
 import axiosInstance from "./AxiosInstance"
-import Cookies from 'js-cookie';
+import { useAuthStore } from './../Stores/useAuthStore';
 
 export const RegisterApi = (values) => {
     return axiosInstance.post("/register", values);
@@ -15,8 +15,9 @@ export const ForgetPasswordApi = (values) => {
 }
 
 
-const token = Cookies.get("token")
 export const logOutApi = () => {
+    const token = useAuthStore.getState().token;
+    
     return axiosInstance.post("/logout", null, {
         headers: {
             Authorization: `Bearer ${token}`,
