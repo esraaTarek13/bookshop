@@ -10,6 +10,7 @@ export const UseLogOut = () => {
         mutationFn: logOutApi,
         onSuccess: () => {
             logOut()
+            localStorage.clear()
         },
     })
 }

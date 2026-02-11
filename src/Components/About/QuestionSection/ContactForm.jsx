@@ -10,13 +10,19 @@ import ContactField from "./ContactField";
 // Contact Form
 export default function ContactForm() {
     const { mutate } = UseContact()
+
+    const user = (() => {
+        const data = localStorage.getItem("user");
+        return data ? JSON.parse(data) : null;
+    })();
+
     return (
         <Formik
             initialValues={{ name: "", email: "", subject: "", message: "" }}
-            validationSchema={ContactSchema}
-            onSubmit={(values) => (console.log(values), mutate(values))}>
+            validationSchema={ContactSchema(user)}
+            onSubmit={(values) => mutate(values)}>
 
-            <Form className="flex flex-col items-center w-full">
+            <Form className="contact-form flex flex-col items-center w-full">
                 <div className="w-full md:flex gap-4">
 
                     <div className="md:w-[50%]">

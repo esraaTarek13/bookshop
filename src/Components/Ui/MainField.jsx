@@ -6,7 +6,7 @@ export default function MainField({ name, type, id, label, placeholder, fn, read
     const [show, setShow] = useState(false);
 
     return (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 mb-3">
             <label
                 htmlFor={id}
                 className="cursor-pointer font-(--text-font-weight) text-(--main-text-color) md:text-lg">

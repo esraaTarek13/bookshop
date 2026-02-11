@@ -26,7 +26,7 @@ export default function ProfileInfo() {
             </div>}
 
             {!isLoading && !isError &&
-                <div className="self-start w-full px-3.75 sm:w-[80%] md:w-[70%] lg:w-[50%] mb-20">
+                <div className="self-start w-full px-3.75 sm:w-[80%] md:w-[70%] lg:w-[60%] mb-20">
                     <ProfileForm profileData={profileData} />
                 </div>
             }

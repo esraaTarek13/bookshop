@@ -4,6 +4,7 @@ import ProfileImage from "./ProfileImage";
 import { ProfileSchema } from "../../Validation/ProfileSchema";
 import { useState } from "react";
 import ProfileField from "./ProfileField";
+import toast from "react-hot-toast";
 
 export default function ProfileForm({ profileData }) {
   const [isEditing, setIsEditing] = useState(false)
@@ -11,6 +12,15 @@ export default function ProfileForm({ profileData }) {
 
   // Handle form submit (send fields)
   const onSubmit = (values) => {
+    const isChanged = Object.keys(values).some(
+      (key) => values[key] !== profileData[key]
+    );
+
+    if (!isChanged) {
+      toast.error("No changes detected"); 
+      return; 
+    }
+    
     const { first_name, last_name, email, phone, address } = values;
     mutate({ first_name, last_name, email, phone, address });
     setIsEditing(false);
@@ -43,7 +53,7 @@ export default function ProfileForm({ profileData }) {
               type="submit"
               className="mt-10 bg-(--btn-color) py-2 px-11 md:py-3 md:px-13.25 rounded-(--btn-radius) font-(--text-font-weight) text-[16px] md:text-[18px] text-(--secondary-text-color) cursor-pointer border border-(--btn-color) hover:bg-transparent hover:text-(--btn-color) transition duration-500"
             >
-              Save information
+              Update information
             </button>
           )}
 

@@ -4,10 +4,12 @@ import * as yup from "yup";
 export const registerSchema = yup.object({
     first_name: yup
         .string()
-        .required("*First name is required"),
+        .required("*First name is required")
+        .matches(/^[A-Za-z\u0600-\u06FF\s]+$/, "*First name must contain only letters"),
     last_name: yup
         .string()
-        .required("*Last name is required"),
+        .required("*Last name is required")
+        .matches(/^[A-Za-z\u0600-\u06FF\s]+$/, "*Last name must contain only letters"),
     email: yup
         .string()
         .required("*Email is required")

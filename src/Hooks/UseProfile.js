@@ -8,9 +8,6 @@ export const useProfile = () => {
         queryKey: ["profile"],
         queryFn: profileApi,
         select: (res) => res.data.data,
-        onError: (error) => {
-            console.log(error);
-        },
     })
 }
 
@@ -19,16 +16,27 @@ export const useUpdateProfile = () => {
 
     return useMutation({
         mutationFn: updateProfileApi,
-        onSuccess: (data) => {
+
+        onMutate: () => {
+            toast.loading("Updating profile...");
+        },
+
+        onSuccess: (res) => {
+            toast.dismiss();
             queryClient.invalidateQueries({ queryKey: ["profile"] })
 
+            const updateUser = res.data.data;
+            localStorage.setItem("user", JSON.stringify(updateUser))
+
             toast.success(
-                data?.data?.message || "Profile Data Updated successfully"
+                res?.data?.data?.message || "Profile Data Updated successfully"
             );
         },
+
         onError: (error) => {
+            toast.dismiss();
             toast.error(
-                error?.response?.data?.message || "Failed to update profile"
+                error?.response?.data?.message || "Profile Data Updated successfully"
             );
         }
     })

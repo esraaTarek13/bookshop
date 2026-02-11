@@ -15,7 +15,7 @@ export default function InputSignup() {
                 validationSchema={registerSchema} onSubmit={(values) => { mutate(values) }}>
 
                 <Form>
-                    <div className="w-full md:flex gap-4 mb-6">
+                    <div className="w-full md:flex gap-4">
                         <div className="flex flex-col gap-2 md:w-[50%]">
                             <MainField
                                 name="first_name"
@@ -27,7 +27,7 @@ export default function InputSignup() {
                             />
                         </div>
 
-                        <div className="flex flex-col gap-2 md:w-[50%] mt-6 md:mt-0">
+                        <div className="flex flex-col gap-2 md:w-[50%]">
                             <MainField
                                 name="last_name"
                                 type="text"

@@ -1,14 +1,12 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import ProfileMenu from "./ProfileMenu";
 import useModalStore from './../../Stores/useModalStore';
-import { useAuthStore } from "../../Stores/useAuthStore";
 
 
 export default function ProfileSection() {
-    const user = useAuthStore((state) => state.user); // Fetch user profile data
-    console.log(user);
-    
     const openMenu = useModalStore((state) => state.toggleModal); // Toggle profile menu
+    const userData = localStorage.getItem("user");
+    const user = userData ? JSON.parse(userData) : null;
 
     return (
         <>

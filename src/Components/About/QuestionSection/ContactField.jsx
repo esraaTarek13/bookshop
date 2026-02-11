@@ -13,7 +13,7 @@ export default function ContactField({ name, placeholder, icon, isTextarea }) {
                     type={isTextarea ? undefined : "text"}
                     placeholder={placeholder}
                     rows={isTextarea ? 5 : undefined}
-                    className="w-full bg-transparent text-sm md:text-base text-[#FFFFFF] outline-0"
+                    className="w-full bg-transparent text-sm md:text-base text-[#FFFFFF] outline-0 caret-white"
                 />
             </div>
             <div className="h-5 mt-2">

@@ -9,15 +9,27 @@ export const UseRegister = () => {
 
   return useMutation({
     mutationFn: RegisterApi,
+
     onMutate: () => {
       toast.loading("Registering user...");
     },
+
     onSuccess: () => {
-      navigate("/login" , {replace: true})
+      toast.dismiss();
+      navigate("/login", { replace: true })
     },
+
     onError: (error) => {
       toast.dismiss();
-      toast.error( error.response?.data?.message || "Login failed")
+
+      let errorMessage = "Registration failed";
+
+      if (error.response?.data?.message?.includes("Duplicate entry")) {
+        errorMessage = "This email is already registered.";
+      }
+
+      toast.error(errorMessage);
     }
+
   })
 }
